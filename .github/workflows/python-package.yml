@@ -29,9 +29,8 @@ jobs:
     - name: Check docker installed or not
       run: docker run hello-world
     - name: Push to docker hub
-      uses: docker/build-push-action@v2.4.0
+      uses: mr-smithers-excellent/docker-build-push@v5.6
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: neimv/python-devops
-        tag_with_ref: true
+        registry: neimv/python-devops
